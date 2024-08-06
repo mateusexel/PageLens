@@ -1,57 +1,89 @@
-# PageLens
+Here’s a concise README file for your project:
 
+---
 
-## TO DO
-check if the ratings count in Books is equal to ratings in Ratings
-r: they are different
+# BookLens - Book Reviews Analysis PoC
 
+This repository contains a Proof of Concept (PoC) designed to automate the analysis of book reviews for Hachette UK using NLP and Large Language Models (LLMs). The PoC focuses on three key functionalities: sentiment analysis of reviews, positioning of the publisher across book categories, and generation of author performance reports.
 
+## Project Structure
 
-sentiment analyses:
-r: Ran a model bert model but it was unecessary bucause we already have  score 
+### Notebooks
 
-plot vectors of category:
-cluster them:
-check wich cluster preforms better:
+1. **01_explore_books.ipynb**
+   - Initial exploration of the book metadata.
+   - Provides insights into the available data fields and their distributions.
 
+2. **01_explore_ratings.ipynb**
+   - Exploration of ratings and reviews data.
+   - Identifies patterns and trends in reader feedback.
 
+3. **02_join_dfs.ipynb**
+   - Merges different datasets (books and reviews) to create a unified dataset for analysis.
 
+4. **03_vectorize_category.ipynb**
+   - Vectorizes the book descriptions to identify positioning across different literary categories.
+   - This notebook supports the analysis of the publisher's strength in various genres.
 
-plot vectors cluster
+5. **04_plot_category.ipynb**
+   - Visualizes the distribution of books across categories.
+   - Helps in understanding the publisher's market positioning.
 
-kg
+6. **05_analyze_author_perfomance.ipynb**
+   - Analyzes the performance of individual authors based on reviews and ratings.
+   - Generates key metrics to evaluate author success.
 
-performance de um certo autor,
-gênero
+7. **06_category_performance.ipynb**
+   - Evaluates the publisher’s performance across different book categories.
+   - Compares performance with other publishers where applicable.
 
- ou até buscar usuários com opiniões relevantes para uma entrevista.
+8. **07_sentiment-roberta-review.ipynb**
+   - Applies the RoBERTa model to perform sentiment analysis on book reviews.
+   - Classifies reviews as positive, negative, or neutral to gauge reader sentiment.
 
+9. **08_model-evaluation.ipynb**
+   - Evaluates the effectiveness of the sentiment analysis model.
+   - Provides metrics and insights to ensure model reliability.
 
- tough argument to make. In the end though Nel does point out that maybe the movies and tie- ins did not have to be so... crass?The book is well researched; lots of neat tidbits are to be gleamed. Early cartoons by Seuss for PM magazine were occasionally (by today\'s standards) shockingly racist. It makes him a little more human and puts his latter works like the Lorax in a new light.Those in Education may enjoy this background. Fans of Seuss will enjoy the exhaustive bibliography of Seuss\'s many, many works. Also good list of other works about the man.                                   
-1. Exploratory Data Analysis (EDA)
-Summary Statistics: Generate descriptive statistics for numerical fields like Price and score.
-Missing Data Analysis: Identify and visualize missing values, especially in fields like Price.
-Distribution of Ratings: Plot the distribution of score values to understand user sentiment.
-Top Reviewers: Identify users who have submitted the most reviews.
-2. Text Analysis
-Word Frequency: Perform a word frequency analysis on the text field to find common words used in reviews.
-Sentiment Analysis: Apply sentiment analysis to the summary and text fields to classify reviews as positive, negative, or neutral.
-Topic Modeling: Use techniques like LDA (Latent Dirichlet Allocation) to identify common themes in the reviews.
+### Data
 
-5. Temporal Analysis
-Review Trends Over Time: Visualize the number of reviews per month/year to spot trends in user engagement.
-Score Trends: Analyze how the average score changes over time for different books or genres.
-6. Profile Name Analysis
-Unique Profile Analysis: Determine the diversity of reviewers by analyzing the uniqueness of profileName.
-Top Profiles: Identify profiles with the highest average scores or most detailed reviews.
-7. Advanced Modeling
-Predictive Modeling: Build a model to predict the score based on the review text, summary, and Price.
-Recommendation System: Use collaborative filtering or content-based filtering to recommend books to users based on their review history.
-8. Visualization
-Heatmaps: Create heatmaps to show correlations between numerical fields like Price, score, and review counts.
-Word Clouds: Generate word clouds for summary and text to visually represent the most common words.
-9. Sentiment vs. Book Categories
-Categorical Sentiment Analysis: If book categories are available, analyze how sentiment varies across different genres or categories.
-10. Time Series Analysis
-Forecasting Review Count: Use time series forecasting to predict the number of reviews a book might receive in the future.
-Seasonality in Reviews: Analyze if there are seasonal trends in review posting (e.g., spikes during holidays).
+- All input data used in these analyses is stored in the `Input` directory.
+- This includes book metadata, ratings, reviews, and any other relevant datasets.
+
+## Getting Started
+
+To run this project locally, clone the repository and ensure you have the necessary Python packages installed. You can install the required packages by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+After installation, you can execute the notebooks in sequence to reproduce the analyses.
+
+## Key Functionalities
+
+1. **Sentiment Analysis**
+   - Conduct sentiment analysis on book reviews using the RoBERTa model (`07_sentiment-roberta-review.ipynb`).
+
+2. **Publisher Positioning**
+   - Analyze and visualize the publisher's positioning across different book categories using vectorization (`03_vectorize_category.ipynb`).
+
+3. **Author Performance Reports**
+   - Generate detailed reports on author performance to support editorial decisions (`05_analyze_author_perfomance.ipynb`).
+
+## Next Steps
+
+- Extend this PoC by integrating these analyses into an automated pipeline.
+- Monitor and refine the models based on feedback and evolving data.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any questions or further information, please contact Mateus Exel.
+
+---
+
+This README provides an overview of the project, guiding the user through the structure and purpose of each notebook while highlighting the key functionalities.
